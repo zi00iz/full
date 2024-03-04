@@ -1,0 +1,2 @@
+# full
+SW_eduClass
