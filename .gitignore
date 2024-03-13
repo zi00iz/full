@@ -1,6 +1,8 @@
 # .env
 .env
 
+.vscode
+
 # c
 c/*
 c/*.o
