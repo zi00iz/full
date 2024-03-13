@@ -1,10 +1,11 @@
-test: test1.o test2.o test3.o
-	gcc -o test test1.o test2.o test3.o
+OBJF = test1.o test2.o test3.o
+test : $(OBJF)
+	gcc -o $@ $^
 test1.o : test1.c a.h
-	gcc -c test1.c
+	gcc -c $<
 test2.o : test2.c a.h b.h
-	gcc -c test2.c
+	gcc -c $*.c
 test3.o : test3.c b.h c.h
-	gcc -c test3.c
-clean:
-	rm -rf test test*.o
+	gcc -c $<
+clean: $(OBJF)
+	rm -rf test $^
